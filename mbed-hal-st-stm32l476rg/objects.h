@@ -107,6 +107,10 @@ struct pwmout_s {
     uint32_t inverted;
 };
 
+struct sleep_s {
+    TIM_HandleTypeDef TimMasterHandle;
+};
+
 #include "gpio_object.h"
 
 #ifdef __cplusplus
