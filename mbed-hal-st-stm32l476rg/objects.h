@@ -64,33 +64,25 @@ struct analogin_s {
 
 struct dac_s {
     DACName dac;
-    PinName pin;
     uint32_t channel;
 };
 
 struct serial_s {
-    UARTName uart;
-    int index; // Used by irq
-    uint32_t baudrate;
-    uint32_t databits;
-    uint32_t stopbits;
-    uint32_t parity;
-    PinName  pin_tx;
-    PinName  pin_rx;
-};
+    PinName pin_tx;
+    PinName pin_rx;
+    uint8_t module;
+    uint32_t event;
+    uint8_t char_match;
+ };
 
 struct spi_s {
-    SPIName spi;
-    uint32_t bits;
-    uint32_t cpol;
-    uint32_t cpha;
-    uint32_t mode;
-    uint32_t nss;
-    uint32_t br_presc;
-    PinName  pin_miso;
-    PinName  pin_mosi;
-    PinName  pin_sclk;
-    PinName  pin_ssel;
+    PinName pin_miso;
+    PinName pin_mosi;
+    PinName pin_sclk;
+    PinName pin_ssel;
+    uint32_t event;
+    uint8_t module;
+    uint8_t transfer_type;
 };
 
 struct i2c_s {
